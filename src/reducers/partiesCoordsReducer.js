@@ -4,7 +4,7 @@ import {
     FETCH_APPLE_SUCCESS,
     SHOW_ERR_MESSAGE,
     CLEAR_ERR_MESSAGE
-} from '../actions/actions'
+} from '../actions/actions.ts'
 
 const initialState = {
     coords: [

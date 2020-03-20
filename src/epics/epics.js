@@ -20,7 +20,7 @@ import {
   showErrMessage,
   clearErrMessage,
   fetchBasket,
-} from '../actions/actions';
+} from '../actions/actions.ts';
 
 const CORS = 'https://cors-anywhere.herokuapp.com/';
 const urlAlyce = 'http://hrtest.alycedev.com/';
