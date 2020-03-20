@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+        "outDir": "./docs/",
+        "sourceMap": true,
+        "noImplicitAny": true,
+        "module": "commonjs",
+        "target": "ES5",
+        "jsx": "react",
+        "esModuleInterop": true,
+
+    }
+}
