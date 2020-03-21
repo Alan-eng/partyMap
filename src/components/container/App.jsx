@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import { connect, useSelector } from 'react-redux';
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -7,6 +7,7 @@ import {
   fetchUsers,
   fetchBasket,
 } from '../../actions/actions.ts';
+import {getEvents} from '../../selectors/selectors'
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import { Hello } from '../presentational/Hello.tsx'
@@ -47,20 +48,19 @@ const mapStateToProps = state => ({
   name: 'state.nestedObject.innerProperty'
 })
 
-function AppContainer() {
-
+const AppContainer = () => {
+  const events = useSelector(getEvents)
+  console.log('!!!!!!!!!!!!________>>>')
+  console.log(events)
   const classes = useStyles();
-  // const {
-  //   errMessage, users, basket, fetchApple, resetApples,
-  // } = this.props;
   return (
     <>
       <CssBaseline />
       <div className={classes.stickyFooter}>
         <Router>
           <div className={classes.content}>
-            <Route path='/' component={MapView}/>
-            <Route exec path='/list' component={ListView}/>
+            <Route path='/' exact component={MapView}/>
+            <Route path='/list' exact component={ListView}/>
           </div>
           <BottomNav />
         </Router>
@@ -69,5 +69,5 @@ function AppContainer() {
   );
 }
 
-const App = connect(mapStateToProps)(AppContainer);
-export default App;
+// const App = connect(mapStateToProps)(AppContainer);
+export default AppContainer;

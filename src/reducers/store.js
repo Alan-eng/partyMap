@@ -11,8 +11,8 @@ import {
 } from '../epics/epics';
 
 
-import partiesCoordsReducer from './partiesCoordsReducer';
-const combinedReducers = combineReducers({ partiesCoordsReducer })
+import partiesCoordsReducer from './mainReducer';
+// const combinedReducers = combineReducers({ partiesCoordsReducer })
 
 const rootEpic = (action$, store$, dependencies) => combineEpics(
   fetchUsersEpic,
@@ -30,7 +30,7 @@ const rootEpic = (action$, store$, dependencies) => combineEpics(
 const epicMiddleware = createEpicMiddleware();
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-const store = createStore(combinedReducers, composeEnhancers(
+const store = createStore(partiesCoordsReducer, composeEnhancers(
   applyMiddleware(epicMiddleware),
 ));
 
