@@ -28,7 +28,7 @@ function AppContainer() {
   return (
     <>
       <span>На карте</span>
-      <Button>Overrides CSS</Button>
+      <Button>Overrides</Button>
       <YMap />
     </>
   );

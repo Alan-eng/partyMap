@@ -3,10 +3,9 @@ const HtmlWebPackPlugin = require("html-webpack-plugin");
 
 module.exports = {
     entry: './src/index.js',
-
-         // Enable sourcemaps for debugging webpack's output.
+    // Enable sourcemaps for debugging webpack's output.
     devtool: "source-map",
-
+    
     resolve: {
         // Add '.ts' and '.tsx' as resolvable extensions.
         extensions: [".js", ".jsx",".ts", ".tsx"]
@@ -14,6 +13,7 @@ module.exports = {
     output: {
         filename: 'main.js',
         path: path.resolve(__dirname, 'docs'),
+        publicPath: '/',
     },
     module: {
         rules: [
@@ -49,6 +49,9 @@ module.exports = {
             // }
         ]
     },
+    devServer: {
+        historyApiFallback: true,
+      },
     plugins: [
         new HtmlWebPackPlugin({
             template: "./src/index.html",

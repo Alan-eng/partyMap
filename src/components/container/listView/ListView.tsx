@@ -6,6 +6,8 @@ import {
   fetchBasket,
 } from '../../../actions/actions';
 import Button from '@material-ui/core/Button';
+import Container from '@material-ui/core/Container';
+import Card from './card/Card'
 
 
 const useStyles = makeStyles({
@@ -14,9 +16,10 @@ const useStyles = makeStyles({
     display: 'flex',
     flexDirection: 'column'
   },
-  content: {
-    background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
-    flex: '1 0 auto',
+  center: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
   },
 });
 
@@ -27,10 +30,12 @@ function ListView() {
   // } = this.props;
   return (
     <>
-      <Button>Overrides CSS</Button>
-      <ul>
-        <li>Список1</li>
-      </ul>
+      <Container maxWidth="sm" className={classes.center}>
+        <Button>Overrides or not</Button>
+        {[1, 2].map(() => (
+          <Card />
+        ))}
+      </Container>
     </>
   );
 }

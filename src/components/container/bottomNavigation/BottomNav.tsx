@@ -1,11 +1,23 @@
+// @ts-nocheck 
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import BottomNavigation from '@material-ui/core/BottomNavigation';
+import IconButton from '@material-ui/core/IconButton';
 import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
+import { Link as RouterLink, LinkProps as RouterLinkProps } from 'react-router-dom';
+import Link from '@material-ui/core/Link';
+// import { Link as RouterLink} from 'react-router-dom';
 import FolderIcon from '@material-ui/icons/Folder';
 import RestoreIcon from '@material-ui/icons/Restore';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
+import {
+  Map,
+  List,
+  Search,
+  Event,
+  PermIdentity
+} from '@material-ui/icons';
 
 const useStyles = makeStyles({
   footer: {
@@ -25,10 +37,11 @@ export default function LabelBottomNavigation() {
 
   return (
     <BottomNavigation value={value} onChange={handleChange} className={classes.footer}>
-      <BottomNavigationAction label="Recents" value="recents" icon={<RestoreIcon />} />
-      <BottomNavigationAction label="Favorites" value="favorites" icon={<FavoriteIcon />} />
-      <BottomNavigationAction label="Nearby" value="nearby" icon={<LocationOnIcon />} />
-      <BottomNavigationAction label="Folder" value="folder" icon={<FolderIcon />} />
+      <BottomNavigationAction component={RouterLink} to="/" label="Map" value="map" icon={<Map />} />
+      <BottomNavigationAction component={RouterLink} to="/list" label="List" value="list" icon={<List />} />
+      <BottomNavigationAction component={RouterLink} to="/search" label="Search" value="search" icon={<Search />} />
+      <BottomNavigationAction component={RouterLink} to="/calendar" label="Calendar" value="calendar" icon={<Event />} />
+      <BottomNavigationAction component={RouterLink} to="/settings" label="Settings" value="settings" icon={<PermIdentity />} />
     </BottomNavigation>
   );
 }
