@@ -47,24 +47,28 @@ const PrettoSlider = withStyles({
 
 const marks = [
     {
-        value: 1,
-        label: '1 км',
-    },
-    {
-        value: 3,
-        label: '3 км',
-    },
-    {
-        value: 5,
-        label: '5 км',
-    },
-    {
-        value: 10,
-        label: '10 км',
-    },
-    {
         value: 15,
-        label: '15 км',
+        label: '15 лет',
+    },
+    {
+        value: 20,
+        label: '20',
+    },
+    {
+        value: 30,
+        label: '30',
+    },
+    {
+        value: 40,
+        label: '40',
+    },
+    {
+        value: 50,
+        label: '50',
+    },
+    {
+        value: 60,
+        label: '60+ лет',
     },
 ];
 
@@ -74,21 +78,26 @@ function valuetext(value: number) {
 
 export default function DiscreteSlider() {
     const classes = useStyles();
+    const [value, setValue] = React.useState<number[]>([20, 25]);
+
+    const handleChange = (event: any, newValue: number | number[]) => {
+        setValue(newValue as number[]);
+      };
 
     return (
         <div className={classes.root}>
             <Typography id="discrete-slider-always" gutterBottom>
-                Как далеко от меня (км):
+                Возраст участников:
       </Typography>
             <PrettoSlider
-                aria-label="pretto slider"
-                defaultValue={10}
+                value={value}
+                onChange={handleChange}
                 getAriaValueText={valuetext}
-                aria-labelledby="discrete-slider-always"
+                aria-labelledby="range-slider"
                 step={1}
                 marks={marks}
-                min={1}
-                max={15}
+                min={15}
+                max={60}
                 valueLabelDisplay="auto"
             />
         </div>
