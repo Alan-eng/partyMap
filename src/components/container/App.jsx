@@ -14,6 +14,7 @@ import { Hello } from '../presentational/Hello.tsx'
 import BottomNav from './bottomNavigation/BottomNav.tsx'
 import MapView from './mapView/MapView.tsx'
 import ListView from './listView/ListView.tsx'
+import SearchView from './searchView/SearchView.tsx'
 
 const theme = createMuiTheme({
   overrides: {
@@ -61,6 +62,7 @@ const AppContainer = () => {
           <div className={classes.content}>
             <Route path='/' exact component={MapView}/>
             <Route path='/list' exact component={ListView}/>
+            <Route path='/search' exact component={SearchView}/>
           </div>
           <BottomNav />
         </Router>

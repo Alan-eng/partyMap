@@ -22,8 +22,10 @@ import {
 const useStyles = makeStyles({
   footer: {
     flexShrink: 0,
-    background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+    // background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
     width: '100%',
+    position: 'sticky',
+    bottom: 0
   },
 });
 

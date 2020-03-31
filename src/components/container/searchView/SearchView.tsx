@@ -7,7 +7,7 @@ import {
 } from '../../../actions/actions';
 import Button from '@material-ui/core/Button';
 import Container from '@material-ui/core/Container';
-import Card from './card/Card'
+import DistanceSlider from './sliders/DistanceSlider'
 
 
 const useStyles = makeStyles({
@@ -23,7 +23,7 @@ const useStyles = makeStyles({
   },
 });
 
-function ListView() {
+function SearchView() {
   const classes = useStyles();
   // const {
   //   errMessage, users, basket, fetchApple, resetApples,
@@ -32,12 +32,13 @@ function ListView() {
     <>
       <Container maxWidth="sm" className={classes.center}>
         <Button>Overrides or not</Button>
-        {[1, 2, 3].map(() => (
+        <DistanceSlider/>
+        {/* {[1, 2, 3].map(() => (
           <Card />
-        ))}
+        ))} */}
       </Container>
     </>
   );
 }
 
-export default ListView;
+export default SearchView;

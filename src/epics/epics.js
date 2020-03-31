@@ -76,9 +76,9 @@ export const resetApplesEpic = (action$) => action$.pipe(
   )),
 );
 
-export const clearErrMessageEpic = (action$) => action$.pipe(
-  ofType(SHOW_ERR_MESSAGE),
-  throttleTime(5000),
-  delay(5000),
-  mapTo(clearErrMessage()),
-);
+// export const clearErrMessageEpic = (action$) => action$.pipe(
+//   ofType(SHOW_ERR_MESSAGE),
+//   throttleTime(5000),
+//   delay(5000),
+//   mapTo(clearErrMessage()),
+// );

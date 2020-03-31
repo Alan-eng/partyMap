@@ -5,10 +5,10 @@ module.exports = {
     entry: './src/index.js',
     // Enable sourcemaps for debugging webpack's output.
     devtool: "source-map",
-    
+
     resolve: {
         // Add '.ts' and '.tsx' as resolvable extensions.
-        extensions: [".js", ".jsx",".ts", ".tsx"]
+        extensions: [".js", ".jsx", ".ts", ".tsx"]
     },
     output: {
         filename: 'main.js',
@@ -20,7 +20,7 @@ module.exports = {
             {
                 test: /\.ts(x?)$/,
                 exclude: /node_modules/,
-                use: [{loader: "ts-loader"}]
+                use: [{ loader: "ts-loader" }]
             },
             {
                 test: /\.(js|jsx)$/,
@@ -41,6 +41,12 @@ module.exports = {
                     }
                 ]
             },
+            // {
+            //     test: /\.(png|svg|jpg|gif)$/,
+            //     use: [
+            //         'file-loader',
+            //     ],
+            // },
             // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
             // {
             //     enforce: "pre",
@@ -51,7 +57,7 @@ module.exports = {
     },
     devServer: {
         historyApiFallback: true,
-      },
+    },
     plugins: [
         new HtmlWebPackPlugin({
             template: "./src/index.html",

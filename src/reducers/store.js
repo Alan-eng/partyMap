@@ -19,7 +19,7 @@ const rootEpic = (action$, store$, dependencies) => combineEpics(
   fetchBasketsEpic,
   fetchAppleEpic,
   resetApplesEpic,
-  clearErrMessageEpic,
+  // clearErrMessageEpic,
 )(action$, store$, dependencies).pipe(
   catchError((error, source) => {
     console.error(error);
