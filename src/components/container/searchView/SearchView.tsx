@@ -11,6 +11,7 @@ import Paper from '@material-ui/core/Paper';
 import DistanceSlider from './sliders/DistanceSlider'
 import AgeSlider from './sliders/AgeSlider'
 import Tags from './sliders/Tags'
+import PriceSelect from './sliders/PriceSelect'
 
 
 // const useStyles = makeStyles({
@@ -30,7 +31,9 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       display: 'flex',
+      flexDirection: 'column',
       justifyContent: 'center',
+      alignItems: 'center',
       flexWrap: 'wrap',
       padding: theme.spacing(0.5),
     },
@@ -58,6 +61,7 @@ function SearchView() {
   return (
     <Container maxWidth="sm">
       <Paper className={classes.root}>
+        <PriceSelect />
         <DistanceSlider />
         <AgeSlider />
         <Tags />
