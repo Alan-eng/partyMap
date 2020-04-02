@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { connect, useSelector } from 'react-redux';
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import {
   fetchUsers,
   fetchBasket,
 } from '../../actions/actions.ts';
-import {getEvents} from '../../selectors/selectors'
+import { getEvents } from '../../selectors/selectors'
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import { Hello } from '../presentational/Hello.tsx'
@@ -59,11 +59,11 @@ const AppContainer = () => {
       <CssBaseline />
       <div className={classes.stickyFooter}>
         <Router>
-          <div className={classes.content}>
-            <Route path='/' exact component={MapView}/>
-            <Route path='/list' exact component={ListView}/>
-            <Route path='/search' exact component={SearchView}/>
-          </div>
+            {/* <div className={classes.content}> */}
+              <Route path='/' exact children={({match}) => <MapView displayNone={match} />}/>
+              <Route path='/search' exact component={SearchView} />
+              <Route path='/list' exact component={ListView} />
+            {/* </div> */}
           <BottomNav />
         </Router>
       </div>

@@ -19,20 +19,21 @@ const useStyles = makeStyles({
   },
 });
 
-function AppContainer() {
+function MapView({displayNone}:{displayNone: object|null}) {
 
   const classes = useStyles();
+  console.log(displayNone)
   // const {
   //   errMessage, users, basket, fetchApple, resetApples,
   // } = this.props;
   return (
-    <>
+    <div style={displayNone===null? {display:'none'}: {}}>
       <span>На карте</span>
       <Button>Overrides</Button>
       <YMap />
-    </>
+    </div>
   );
 }
 
-// const App = connect(mapStateToProps, mapDispatchToProps)(AppContainer);
-export default AppContainer;
+// const App = connect(mapStateToProps, mapDispatchToProps)(MapView);
+export default MapView;
