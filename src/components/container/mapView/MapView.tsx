@@ -22,7 +22,6 @@ const useStyles = makeStyles({
 function MapView({displayNone}:{displayNone: object|null}) {
 
   const classes = useStyles();
-  console.log(displayNone)
   // const {
   //   errMessage, users, basket, fetchApple, resetApples,
   // } = this.props;
